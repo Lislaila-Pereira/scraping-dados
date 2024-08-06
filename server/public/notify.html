@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificação de Evento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastre-se para Notificações</h1>
+        <p>Receba notificações quando o país escolhido estiver entre os cinco primeiros no ranking de medalhas!</p>
+        <form id="notifyForm">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="country">País:</label>
+            <select id="country" name="country" required>
+                <option value="" disabled selected>Escolha um país</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Estados Unidos">Estados Unidos</option>
+                <option value="China">China</option>
+                <option value="Japão">Japão</option>
+                <option value="França">França</option>
+            </select>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div class="message" id="message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

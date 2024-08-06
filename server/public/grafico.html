@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Medalhas</title>
+    <style>
+        h1{
+            color:#4CAF50;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Gráfico de Medalhas</h1>
+    <canvas id="medalChart" width="350" height="100"></canvas>
+    <script>
+        fetch('/dados')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('medalChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.map(entry => entry.pais),
+                        datasets: [
+                            {
+                                label: 'Ouro',
+                                data: data.map(entry => entry.ouro),
+                                backgroundColor: 'gold',
+                            },
+                            {
+                                label: 'Prata',
+                                data: data.map(entry => entry.prata),
+                                backgroundColor: 'silver',
+                            },
+                            {
+                                label: 'Bronze',
+                                data: data.map(entry => entry.bronze),
+                                backgroundColor: '#cd7f32',
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Erro ao carregar dados:', error));
+    </script>
+</body>
+</html>

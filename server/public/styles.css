@@ -1,0 +1,50 @@
+*{ 
+    /*resetar padroes do navegador*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*inclui padding e border na lergura e altura*/
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;  
+    max-width: 400px;
+    margin: 50px auto; /* o 'auto' centraliza horizontalemte em relacao ao container pai(body) */
+}
+
+p {
+    font-size: 14px;
+    margin: 20px 0px;
+}
+
+input[type="text"], input[type="email"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 14px;
+    color: blue;
+}

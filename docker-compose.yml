@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  python-service:
+    build:
+      context: .
+      dockerfile: Dockerfile-python
+    command: ["bash", "scrape.sh"]
+    networks:
+      - trabalho-network
+
+  node-service:
+    build:
+      context: ./server
+      dockerfile: Dockerfile-node
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    networks:
+      - trabalho-network
+
+networks:
+  trabalho-network:
+    driver: bridge
+
