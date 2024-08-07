@@ -12,20 +12,21 @@ Este projeto é uma aplicação que extrai dados dos países medalhistas nas Oli
 ## Como Executar o Projeto
 
 1. **Clone o repositório**
-
    ```bash
    git clone https://github.com/usuario/nome-do-repositorio.git
    cd nome-do-repositorio
-
-2. **Construir e iniciar os containers**
-
+   
+2. **Configurar .env**
+   - Edite o arquivo .env e forneça suas próprias credenciais e informações necessárias.
+   
+3. **Construir e iniciar os containers**
    ```bash
    docker-compose up --build
 
-3. **Acessar a aplicação**
+4. **Acessar a aplicação**
   - Acesse a visualização dos dados gráfico em http://localhost:3000/grafico.html
   - Inscreva-se para notificações em http://localhost:3000/notify.html
 
-4. **Requisitos**
+5. **Requisitos**
    - Docker
    - Docker compose
