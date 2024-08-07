@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-python
-    command: ["bash", "scrape.sh"]
     networks:
       - trabalho-network
 
